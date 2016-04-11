@@ -12,6 +12,8 @@ lib-cov
 pids
 logs
 results
+dist
+.sass-cache
 
 node_modules
 
