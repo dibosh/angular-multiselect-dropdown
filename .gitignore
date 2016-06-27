@@ -8,11 +8,6 @@
 *.gz
 .idea/*
 *.DS_Store
-lib-cov
-pids
-logs
-results
-dist
 .sass-cache
 *.css.map
 
