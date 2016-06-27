@@ -45,7 +45,6 @@
         sass: {
           dist: {
             files: {
-              "main.css": "main.scss",
               "dist/multiselect-dropdown.css": "src/multiselect-dropdown/multiselect-dropdown.scss"
             }
           }

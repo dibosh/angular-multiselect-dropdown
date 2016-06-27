@@ -1,14 +1,28 @@
 (function () {
 	'use strict';
 
-	angular.module('angular-multiselect-dropdown', []);
+	angular.
+		module('lodash', []).factory('_', LodashFactory);
+
+	LodashFactory.$inject = ['$window'];
+
+	/** @ngInject */
+	function LodashFactory($window) {
+		return $window._;
+	}
+
+	angular
+		.module('angular-multiselect-dropdown', [
+			'lodash',
+			'offClick'
+		]);
 
 	angular
 		.module('angular-multiselect-dropdown')
 		.directive('mdMultiselectDropdown', MultiSelectDropdown);
 
 	/** @ngInject */
-	function MultiSelectDropdown() {
+	function MultiSelectDropdown(_) {
 		return {
 			restrict: 'E',
 			templateUrl: 'multiselect-dropdown.html',
