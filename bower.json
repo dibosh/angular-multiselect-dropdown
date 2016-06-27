@@ -1,10 +1,9 @@
 {
-  "name": "angular-multiselect-dropdown-demo",
+  "name": "angular-multiselect-dropdown",
   "version": "0.0.0",
   "authors": [
     "Munim Dibosh abdulmunim.buet@gmail.com"
   ],
-  "description": "Demo",
   "keywords": [
     "angular",
     "AngularJS",
@@ -14,11 +13,25 @@
   ],
   "license": "MIT",
   "ignore": [
-    "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    ".sass-cache",
+    "gruntfile.js",
+    "src",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "bower.json",
+    "package.json",
+    "README.md",
+    "npm-debug.log",
+    "index.html",
+    "main.scss",
+    "main.css",
+    "main.css.map",
+    "app.js"
   ],
   "dependencies": {
     "angular": "~1.2.0",
