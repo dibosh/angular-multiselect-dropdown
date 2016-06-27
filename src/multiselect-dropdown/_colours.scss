@@ -1,0 +1,63 @@
+//Common Colors
+
+// White
+$White: #ffffff;
+
+//Black & Gray
+$JetBlack: #000000;
+$DarkBlack: #1b1b1b;
+$Black: #252525;
+$DarkGray: #676767;
+$MediumGray: #888;
+$Gray: #b2b2b3;
+$Thistle: #d8d8d8;
+$LightGray: #f8f8f8;
+$LighterGray: #f0f0f0;
+$GrayCloud: #b6b6b4;
+$ListItemGray: #fdfdfd;
+
+//Black Shades
+$Black10: rgba($Black, 0.1);
+$Black20: rgba($Black, 0.2);
+$Black30: rgba($Black, 0.3);
+$Black50: rgba($Black, 0.5);
+$Black08: rgba($Black, 0.08);
+$Black05: rgba($Black, 0.05);
+$Black03: rgba($Black, 0.03);
+
+//Red
+$Red: #ef2b35;
+
+//Yellow
+$Highlight: #fffed5;
+$Highlight2: #ffffef;
+
+//Blue
+$Blue: #5891de;
+
+//Green
+$Green: #23cb48;
+
+//Border
+$BorderColor: #e2e1e0;
+
+// Color classes
+.color-error {
+  color: $Red !important;
+}
+
+.color-success {
+  color: $Green !important;
+}
+
+.color-warning {
+  color: $Highlight2 !important;
+}
+
+.color-info {
+  color: $Blue !important;
+}
+
+.color-disabled {
+  color: $Gray !important;
+}

@@ -1,0 +1,63 @@
+.text-capitalize {
+  text-transform: capitalize;
+}
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin text-ellipsis-nowrap {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin absolute($args) {
+  position: absolute;
+  //list of possible directions
+  $directions: top right bottom left;
+  //check how many direction was given
+  @each $o in $directions {
+    //get the index for current direction in args
+    $i: index($args, $o);
+    /**
+     * Verifications
+     * the direction listed in $args or false?
+     * the direction has a value and it's next to the name?
+     * the direction value valid?
+     * all ok? assign the value
+     */
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+}
+
+@mixin relative($args) {
+  position: relative;
+  //list of possible directions
+  $directions: top right bottom left;
+  //check how many direction was given
+  @each $o in $directions {
+    //get the index for current direction in args
+    $i: index($args, $o);
+    /**
+     * Verifications
+     * the direction listed in $args or false?
+     * the direction has a value and it's next to the name?
+     * the direction value valid?
+     * all ok? assign the value
+     */
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+}
+
+

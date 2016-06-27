@@ -1,10 +1,10 @@
 (function () {
 	'use strict';
 
-	angular.module('dibosh.angular-multiselect-dropdown', []);
+	angular.module('angular-multiselect-dropdown', []);
 
 	angular
-		.module('dibosh.angular-multiselect-dropdown')
+		.module('angular-multiselect-dropdown')
 		.directive('mdMultiselectDropdown', MultiSelectDropdown);
 
 	/** @ngInject */

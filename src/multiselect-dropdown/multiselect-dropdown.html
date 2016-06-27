@@ -1,0 +1,62 @@
+<div class="dropdown-wrapper content-filter" off-click="showDropDown = false">
+  <label class="filter-dropdown-label">{{label}}</label>
+  <button class="dropdown-toggle small light" ng-click="showDropDown = !showDropDown">
+    <span>{{(selectedOptions.length && (selectedOptions.length + ' Selected')) || 'All'}}</span>
+    <span class="arrow-down"></span>
+  </button>
+  <div class="flyout" ng-show="showDropDown">
+    <div class="search-box-wrapper">
+      <input ng-model="search" class="search-box" type="text" placeholder="Search {{label}}s"/>
+    </div>
+    <div class="selected-items-segment" ng-if="(selectedOptions | filter: search).length > 0">
+      <label class="segment-header text-capitalize">Selected {{label}}s</label>
+      <ul class="selected-items-list">
+        <li class="item" ng-repeat="option in selectedOptions | filter: search | orderBy: nameKey"
+            ng-click="deselectOption(option)">
+          <div class="checkbox-wrapper">
+            <input type="checkbox" checked/>
+              <span class="nc-checkbox">
+                  <span class="icon-check"></span>
+              </span>
+          </div>
+          <p class="custom-inline line-height14">
+            <span>
+              <img class="avatar" ng-if="imageKey" ng-src="{{option[imageKey]}}"/>
+              <span ng-bind-html="option[nameKey] | highlight: search"></span>
+            </span>
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="available-items-segment" ng-if="(options | filter: search).length > 0">
+      <label class="segment-header text-capitalize">Available {{label}}s</label>
+      <ul class="items-list">
+        <li class="item-loading" ng-if="loadingItems">
+          <p class="custom-inline line-height14">
+            Loading...
+          </p>
+        </li>
+        <li class="item-info" ng-if="(options.length == 0 && selectedOptions.length === 0) || !options">{{label}}s
+          not found
+        </li>
+        <li class="item" ng-repeat="option in options | filter: search | orderBy: nameKey"
+            ng-click="selectOption(option)">
+          <div class="checkbox-wrapper">
+            <input type="checkbox"/>
+              <span class="nc-checkbox">
+                  <span class="icon-check"></span>
+              </span>
+          </div>
+          <p class="custom-inline line-height14">
+            <span><img class="avatar" ng-if="imageKey" ng-src="{{option[imageKey]}}"
+                       src="/static/images/img-default.png"/>
+                <span ng-bind-html="option[nameKey] | highlight: search"></span>
+            </span>
+          </p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
